@@ -8,7 +8,7 @@ def wines(input, output)
     result = Hash.new { |h, k| h[k] = [] }
     total = 0
 
-    # load the file in two dimensions: 
+    # load the file in two dimensions:
     #   wines with all the people that want them
     #   and people with all the wines they wany
     CSV.foreach(input, { :col_sep => "\t" }) do |row|
