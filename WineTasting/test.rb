@@ -11,7 +11,7 @@ class WineTastingTests < Test::Unit::TestCase
     def setup
         CSV.foreach("out.txt", { :col_sep => "\t" }) do |row|
             if (row.count == 1)
-                @@expectedTotalWinesSold = row[0].to_i()
+                @@expectedTotalWinesSold = row[0].to_i
             elsif
                 @@buyers[row[0]] += 1
                 @@wines[row[1]] += 1

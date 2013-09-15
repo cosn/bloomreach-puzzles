@@ -33,7 +33,7 @@ def wines(input, output)
 
     # whatever wines are left are under contention
     # give each wine to the first person in the list that wants it
-    # and still hasn't received a wine
+    # and still hasn't received all wines
     wines.each do |w, p|
         next if p == nil
 
