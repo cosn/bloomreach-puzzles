@@ -2,9 +2,10 @@ http://bloomreach.com/puzzles/
 
 Wine Tasting:
 
+    Results saved in out.txt
     Sold 300000 out of 442408 wines (67.81%)
-    0 people did not get all their wines (0.0%)
+    0 people did not get all 3 wines (0.0%)
 
-    real    0m9.343s
-    user    0m9.152s
+    real    0m9.511s
+    user    0m9.312s
     sys 0m0.186s
