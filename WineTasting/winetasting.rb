@@ -52,7 +52,7 @@ def wines(input, output)
     out.write("#{total}\n")
     result.each do |k, v| 
         v.each { |vv| out.write("#{k}\t#{vv}\n") }
-        incomplete += 1 if v.count != 3
+        incomplete += 1 if v.count != @winesPerPerson
     end
     puts "Results saved in #{output}"
 
