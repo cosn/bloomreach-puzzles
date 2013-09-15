@@ -7,7 +7,6 @@ def wines(input, output)
     people = Hash.new { |h, k| h[k] = [] }
     result = Hash.new { |h, k| h[k] = [] }
     total = 0
-    incomplete = 0
 
     # load the file in two dimensions: 
     #   wines with all the people that want them
@@ -50,6 +49,7 @@ def wines(input, output)
 
     out = File.open(output, 'w')
     out.write("#{total}\n")
+    incomplete = 0
     result.each do |k, v| 
         v.each { |vv| out.write("#{k}\t#{vv}\n") }
         incomplete += 1 if v.count != @winesPerPerson
