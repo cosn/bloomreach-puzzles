@@ -50,7 +50,10 @@ def wines(input, output)
 
     out = File.open(output, 'w')
     out.write("#{total}\n")
-    result.each { |k, v| v.each { |vv| out.write("#{k}\t#{vv}\n") } }
+    result.each do |k, v| 
+        v.each { |vv| out.write("#{k}\t#{vv}\n") }
+        incomplete += 1 if v.count != 3
+    end
     puts "Results saved in #{output}"
 
     percentSold = total.to_f / wines.length.to_f * 100.0
