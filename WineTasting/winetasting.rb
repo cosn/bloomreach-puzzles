@@ -7,6 +7,7 @@ def wines(input, output)
     people = Hash.new { |h, k| h[k] = [] }
     result = Hash.new { |h, k| h[k] = [] }
     total = 0
+    maximumPossibleSale = 0
 
     # load the file in two dimensions:
     #   wines with all the people that want them
@@ -15,6 +16,10 @@ def wines(input, output)
         wines[row[1]] << row[0]
         people[row[0]] << row[1]
     end
+
+    # simple optimization to be able to stop _trying_ to sell
+    # wines if everyone got their wines
+    maximumPossibleSale = people.length * @winesPerPerson
 
     # go through each person and have them buy wines
     # if they are the only one who want a wine, give it to them
@@ -35,6 +40,7 @@ def wines(input, output)
     # give each wine to the first person in the list that wants it
     # and still hasn't received all wines
     wines.each do |w, p|
+        break if total == maximumPossibleSale
         next if p == nil
 
         p.each do |person|
